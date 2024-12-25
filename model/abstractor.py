@@ -4,7 +4,7 @@ from attentions.multi_head_attention import MultiHeadAttention
 
 GPT_CONFIG_124M = {
  "vocab_size": 50257, # Vocabulary size
- "context_length": 1024, # Context length
+ "context_length": 256, # Context length
  "emb_dim": 768, # Embedding dimension
  "n_heads": 12, # Number of attention heads
  "n_layers": 12, # Number of layers
@@ -50,7 +50,7 @@ class FeedForward(nn.Module):
 class Transformer(nn.Module):
     def __init__(self, cfg):
         super().__init__()
-        self.att = MultiHeadAttention(d_in=cfg["emb_dim"],
+        self.attn = MultiHeadAttention(d_in=cfg["emb_dim"],
             d_out=cfg["emb_dim"],
             num_heads=cfg["n_heads"],
             context_length=cfg["context_length"],
