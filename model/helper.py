@@ -1,5 +1,5 @@
 import torch
-from model.generate import generate_text_simple, tokenizer
+from model.generate import tokenizer
 
 def text_to_token_ids(text):
     encoded = tokenizer.encode(text, allowed_special={'<|endoftext|>'})
