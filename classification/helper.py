@@ -203,7 +203,7 @@ if __name__ == "__main__":
     ########################################
     # Download and prepare dataset
     ########################################
-    data_file_path = Path("movie_data.csv")
+    data_file_path = "movie_data.csv"
     df = pd.read_csv(data_file_path, sep="\t", header=None, names=["sentiment", "review"])
     balanced_df = create_balanced_dataset(df)
 
